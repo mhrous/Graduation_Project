@@ -44,3 +44,10 @@ The front-end is served on http://localhost:3000/ and the back-end on http://loc
 - Flask - http://flask.pocoo.org/
 - PyMongo - https://api.mongodb.com/python/current/
 
+
+## dodo 
+- Addressing seventh grade problems
+
+## Problems
+- Cannot display mathematical equations correctly when not connected to the net
+- cannot show the steps to solve the mathematical equation
