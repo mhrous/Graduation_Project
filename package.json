@@ -4,5 +4,14 @@
   "main": "index.js",
   "repository": "https://github.com/mhrous/Graduation_Project.git",
   "author": "mahrous <mhrous.12345@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.26.7"
+  },
+  "scripts": {
+    "start": "concurrently \"yarn start-frontend || npm run start-frontend\" \"yarn start-backend || npm run start-backend\"",
+    "start-backend": "python3 server/server.py || python server/server.py || py -3 server/server.py",
+    "install-requirements": "pip install -r server/requirements.txt",
+    "start-frontend": "browser-sync --startPath ./client start --port 3000 --server --files -w ./client/*"
+  }
 }
