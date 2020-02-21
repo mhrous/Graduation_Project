@@ -13,5 +13,8 @@
     "start-backend": "python3 server/server.py || python server/server.py || py -3 server/server.py",
     "install-requirements": "pip install -r server/requirements.txt",
     "start-frontend": "browser-sync --startPath ./client start --port 3000 --server --files -w ./client/*"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
   }
 }

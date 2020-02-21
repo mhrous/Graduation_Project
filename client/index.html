@@ -1,28 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Physics Solver</title>
-    <link rel="stylesheet" href="./assets/css/tailwindcss.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Physics solver</title>
+    <link rel="stylesheet" href="./assets/css/bulma.css" />
+    <link rel="stylesheet" href="./assets/css/help.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    
   </head>
   <body>
-    <main id="app" class="min-h-screen	max-h-screen overflow-y-auto overflow-x-hidden">
-      <div class="flex flex-col   px-4 py-8 md:px-16 lg:px-64 ">
-        <div class="bg-white shadow hover:shadow-lg rounded-lg border   border-gray-400 p-4 ">1</div>
-        <div class="bg-white shadow hover:shadow-lg rounded-lg border   border-gray-400 p-4 mt-3 ">
-          
-          When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-          \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+    <main id="app" class=" p-8 lg:px-36 xl:px-24 md:px-16">
+      <div class="box p-8">
+        <div class="field">
+          <div class="control">
+            <textarea
+              class="textarea"
+              :class='{"is-info":problemText.length==0 , "is-success":problemText.length>10,"is-danger":problemText.length<=10 &&problemText.length}'
+              v-model="problemText"
+              placeholder="اكتب نص المسائلة هنا"
+            ></textarea>
+          </div>
         </div>
       </div>
+      <div class="box">
+        <div v-for="e in data" class="columns">
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-primary "
+                  v-model="e.body"
+                  type="text"
+                  placeholder="Primary input"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-primary"
+                  type="text"
+                  v-model="e.type"
+                  placeholder="Primary input"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-primary"
+                  type="text"
+                  placeholder="Primary input"
+                  v-model="e.amount"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-primary"
+                  type="text"
+                  placeholder="Primary input"
+                  v-model="e.unit"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="control">
+              <button class="button is-link is-light" @click="removeData(e.id)">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+        <button @click="addData">sadsad</button>
+      </div>
+      <div class="box">1</div>
     </main>
-    <script 
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
+    <script src="./assets/js/fontawesome.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <script src="./assets/js/vue.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
